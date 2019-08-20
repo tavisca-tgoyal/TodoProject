@@ -1,0 +1,122 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: arial,helvetica;
+  background-image: url("body_background.jpg");
+}
+
+/*
+webpage container section
+*/
+.container{
+  width: 1200px;
+  height:600px;
+  background-color: white;
+  margin-left: 60px;
+  margin-top: 30px;
+}
+
+/*
+Header section
+*/
+header{
+  background-color: #b58814;
+  color: white;
+  padding-left: 30px;
+  height: 10%;
+
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+header h1{
+  padding-top: 10px;
+}
+
+/*
+navigation section
+*/
+nav{
+  width: 25%;
+  height: 499px;
+  margin-left: 10px;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 10px;
+}
+
+ul{
+  list-style-type:none;
+
+}
+nav ul a{
+  display: block;
+  padding: 18px,16px;
+  text-decoration: none;
+  color: black;
+}
+nav li .active{
+  color:green;
+}
+nav ul li{
+  display: block;
+  margin:5px;
+  font-size: 20px;
+  padding:5px;
+  color:green;
+}
+
+nav ul li:hover {
+  background: #ddd;
+}
+
+/*
+main content section.....................................................
+*/
+main{
+
+  padding-left: 30px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 72.5%;
+  height: 499px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+main ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+main ul li:hover {
+  background: #ddd;
+}
+
+
+
+
+/*
+designing the add button
+*/
+
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+
+/*
+Footer section
+*/
+.container footer{
+  height: 5%;
+  background-color: #25181e;
+  color: white;
+  text-align: right;
+
+  margin-top: 520px;
+}
+.container footer h4{
+  margin-right: 20px;
+  padding-top: 5px;
+  font-weight: lighter;
+}
