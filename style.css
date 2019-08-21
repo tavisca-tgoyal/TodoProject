@@ -87,6 +87,7 @@ main #myInput {
   width: 500px;
   height: 30px;
   border: 5px;
+  padding-left: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
@@ -107,6 +108,20 @@ main #inputButton{
   background: #ddd;
 }
 
+#myUL li{
+  width: 500px;
+  height: 40px;
+  text-align: center;
+  padding: 10px;
+}
+
+/*style the close span in the list item*/
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  
+}
 
 
 

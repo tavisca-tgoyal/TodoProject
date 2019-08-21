@@ -1,19 +1,5 @@
-var tags = [
-  // "Meet DJ",
-  // "GoTo Delhi",
-  // "cook",
-  // "Bring candles",
-  // "Buy trimmer",
-  // "pick someone",
-  // "finish work",
-  // "meet modi sahab",
-  // "start a startup",
-  // "throw train to sea",
-  // "fly all over the world using my wings",
-  // "unistall instagram",
-  // "wake up at five o clock"
-];
-
+var tags = [];
+//(tags = localStorage.getItem("originalArray"))();
 
 function newElement(){
   var inputValue = document.getElementById("myInput").value;
@@ -28,6 +14,7 @@ function newElement(){
   } else {
     document.getElementById("myUL").appendChild(li);
     tags.push(inputValue);
+    //localStorage.setItem("originalArray",tags);
 
   }
   document.getElementById("myInput").value = "";
@@ -45,3 +32,18 @@ function newElement(){
       }
    }
  }
+
+
+
+ //adding a close button in each list item
+var parent = document.getElementById('main');
+var liList = parent.getElementsByTagName('LI');
+
+for (var i = 0; i < liList.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  liList[i].appendChild(span);
+  //document.getElementById("main").appendChild(span);
+}
