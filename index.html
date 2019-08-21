@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css" type="text/css"/>
-
+    <script type="text/javascript" src="script.js"></script>
     <title></title>
   </head>
   <body>
@@ -27,24 +27,19 @@
         <main>
 
           <br><br>
-          <form autocomplete="off" action="test.php">
-            <div class="autocomplete" style="width:300px;">
-            <input type="text" list="datalist" onkeyup="suggest(this.value)"id = "myInput"    placeholder="enter your todo bro">
-            </div>
-            <input type="button" onclick="newElement()" value="add">
-          </form>
-          <h2>Your List</h2>
 
-          <ul id="myUL" >
-            <li>Hit the gym</li>
-            <li class="checked">Pay bills</li>
-            <li>Meet Chandan</li>
-            <li>Buy eggs</li>
-            <li>Read a book</li>
-            <li>Organize office</li>
-          </ul>
+            <input type="text" list="datalist" onkeyup="suggest(this.value)"id = "myInput" placeholder="enter your todo bro">
+
+            <input type="button" onclick="newElement()" id="inputButton" value="add">
+
+            <h2>Your List</h2>
 
 
+          <div id="todo-div">
+            <ul id="myUL" >
+              
+            </ul>
+          </div>
           <datalist id="datalist"></datalist>
 
         </main>
@@ -54,75 +49,5 @@
       </footer>
 
     </div>
-
-
-
-    <script>
-
-    function newElement(){
-      var li = document.createElement("li");
-      var inputValue = document.getElementById("myInput").value;
-      var t = document.createTextNode(inputValue);
-      li.appendChild(t);
-
-      if (inputValue === '') {
-        alert("You must write something!");
-      } else {
-        document.getElementById("myUL").appendChild(li);
-      }
-
-      document.getElementById("myInput").value = "";
-    }
-
-
-
-    var tags = [
-    "Meet DJ",
-    "GoTo Delhi",
-    "cook",
-    "Bring candles",
-    "Buy trimmer",
-    "pick someone",
-    "finish work",
-    "meet modi sahab",
-    "start a startup",
-    "throw train to sea",
-    "fly all over the world using my wings",
-    "unistall instagram",
-    "wake up at five o clock"
-    ];
-
-
-     var n= tags.length;
-
-     function suggest(value) {
-        document.getElementById('datalist').innerHTML = '';
-         //setting datalist empty at the start of function
-         //if we skip this step, same name will be repeated
-
-         l=value.length;
-         //input query length
-     for (var i = 0; i<n; i++) {
-         if(((tags[i].toLowerCase()).indexOf(value.toLowerCase()))>-1)
-         {
-           //comparing if input string is existing in tags[i] string
-
-           var node = document.createElement("option");
-           var val = document.createTextNode(tags[i]);
-           node.appendChild(val);
-
-           document.getElementById("datalist").appendChild(node);
-           //creating and appending new elements in data list
-             }
-         }
-     }
-
-    </script>
-
-
-
-
-
-
   </body>
 </html>
