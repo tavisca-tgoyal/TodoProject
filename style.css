@@ -1,5 +1,10 @@
 *{
   box-sizing: border-box;
+
+}
+span{
+  padding: 0;
+  margin:0;
 }
 body{
   font-family: arial,helvetica;
@@ -99,6 +104,10 @@ main #inputButton{
 }
 #todo-div{
   padding-right: 100px;
+  overflow: scroll;
+  height: 315px;
+  overflow-x: hidden;
+
 }
 
 #myUL li:nth-child(odd) {
@@ -112,15 +121,39 @@ main #inputButton{
   width: 500px;
   height: 40px;
   text-align: center;
-  padding: 10px;
+  padding:10px;
 }
 
 /*style the close span in the list item*/
 .close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  
+  height: 30px;
+  float: right;
+  font-size: 20px;
+  margin-top: -2px;
+
+}
+
+.close:hover {
+
+  color: white;
+}
+
+ /*style the edit span*/
+ .edit{
+   height: 30px;
+   float: right;
+   margin-right: 10px;
+
+ }
+ .edit:hover {
+
+   color: white;
+ }
+/*when clicked a todo draw a line*/
+#todo-div ul li .checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
 }
 
 

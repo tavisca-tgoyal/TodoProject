@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css" type="text/css"/>
-    <script type="text/javascript" src="script.js"></script>
     <title></title>
   </head>
   <body>
@@ -28,14 +27,14 @@
 
           <br><br>
 
-          <input type="text" list="datalist" onkeyup="suggest(this.value)"id = "myInput" placeholder="Enter....">
+          <input type="text" list="datalist" onkeyup="suggest(this.value)"id = "myInput"  placeholder="Enter....">
           <input type="button" onclick="newElement()" id="inputButton" value="add">
           <h2>Your List</h2>
 
           <div id="todo-div">
             <ul id="myUL" >
               <li>Hit the gym</li>
-              <li class="checked">Pay bills</li>
+              <li>Pay bills</li>
               <li>Meet Chandan</li>
               <li>Buy eggs</li>
               <li>Read a book</li>
@@ -52,4 +51,6 @@
 
     </div>
   </body>
+  <script type="text/javascript" src="script.js"></script>
+
 </html>
