@@ -139,6 +139,8 @@ function editEntry(){
       if(index>-1){
         tags.splice(index,1);
       }
+      historyArray.push(string);
+
       document.getElementById("myInput").value = string;
       this.parentElement.style.display = "none";
     }
@@ -152,23 +154,4 @@ window.onbeforeunload = function(){
 
   localStorage.setItem("hist_array", historyArray);
   historyArray = [];
-}
-
-
-//history tab coding
-var arr = [];
-arr = localStorage.getItem("hist_array").split(",");
-
-function showHistory(){
-  for(var item of arr){
-
-      var li = document.createElement("li");
-      var t = document.createTextNode(item);
-
-      li.appendChild(t);
-      addDecoration(li);
-
-      document.getElementById("historyUL").appendChild(li);
-    }
-
 }
