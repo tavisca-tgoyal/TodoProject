@@ -122,6 +122,7 @@ main #inputButton{
   height: 40px;
   text-align: center;
   padding:10px;
+  cursor: pointer;
 }
 
 /*style the close span in the list item*/
@@ -144,7 +145,7 @@ main #inputButton{
    height: 30px;
    float: right;
    margin-right: 10px;
-   cursor: po
+   cursor: pointer;
 
  }
  .edit:hover {
@@ -156,9 +157,18 @@ main #inputButton{
   background: #888;
   color: #fff;
   text-decoration: line-through;
+
+
+
 }
 
-
+#todo-div ul li.checked::before {
+  content:'\2713';
+  display:inline-block;
+  color:white;
+  float:left;
+  font-size: bold;
+}
 
 /*
 designing the add button
