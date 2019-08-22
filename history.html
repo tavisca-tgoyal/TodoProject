@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <style media="screen">
+      #history-div{
+        overflow: scroll;
+        height: 315px;
+        overflow-x: hidden;
+      }
+
+      #historyUL li{
+        width: 500px;
+        height: 40px;
+
+        padding:10px;
+      }
+
+      #historyUL li:nth-child(odd) {
+        background: #f9f9f9;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body >
+
+    <div class="container">
+
+      <header>
+        <h1>ToDo</h1>
+      </header>
+
+
+        <nav>
+          <ul>
+            <li><a  href="index.html">Home</a></li>
+            <li><a class="active" href="#">History</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </nav>
+
+        <main>
+
+          <br><br>
+
+          <h2>Congratulations! you have completed tasks</h2>
+          <div id="history-div">
+            <ul id="historyUL">
+
+            </ul>
+          </div>
+
+
+        </main>
+
+
+      <footer>
+        <h4>copyright &copy Tushar Goyal</h4>
+      </footer>
+
+    </div>
+  </body>
+  <script type="text/javascript" src="Historyscript.js"></script>
+
+</html>

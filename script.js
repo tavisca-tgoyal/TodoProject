@@ -1,6 +1,30 @@
-var tags = ["Hit the gym","Pay bills", "Meet Chandan", "Buy eggs", "Read a book", "Organize office"];
+var historyArray = [];
+var tags = [];
+
+//var tags = ["Hit the gym","Pay bills", "Meet Chandan", "Buy eggs", "Read a book", "Organize office"];
 //(tags = localStorage.getItem("originalArray"))();
 
+//fetching data when page loaded
+function loadContent(){
+  historyArray =localStorage.getItem("hist_array").split(",");
+  tags = localStorage.getItem("data_array").split(",");
+
+  showUserData(tags,"myUL");
+}
+
+function showUserData(tags, id){
+  for(var item of tags){
+    var li = document.createElement("li");
+    var t = document.createTextNode(item);
+
+    li.appendChild(t);
+    addDecoration(li);
+
+    document.getElementById(id).appendChild(li);
+  }
+}
+
+//adding new li dynamically
 function newElement(){
   var inputValue = document.getElementById("myInput").value;
 
@@ -76,6 +100,17 @@ function closeTheEntry(){
   var close = document.getElementsByClassName("close");
   for (var i = 0; i < close.length; i++) {
     close[i].onclick = function() {
+    //adding item text to the history array
+    var string = this.parentElement.textContent;
+    string = string.substring(0, string.length-5);
+    historyArray.push(string);
+    //removing item from the tags
+    var index = tags.indexOf(string);
+    if (index > -1) {
+      tags.splice(index, 1);
+    }
+
+    //removing the clicked item
     var div = this.parentElement;
     div.style.display = "none";
     }
@@ -88,6 +123,7 @@ function closeTheEntry(){
   list.addEventListener('click', function(ev) {
     if (ev.target.tagName === 'LI') {
       ev.target.classList.toggle('checked');
+
     }
   }, false);
 
@@ -103,4 +139,32 @@ function editEntry(){
       this.parentElement.style.display = "none";
     }
   }
+}
+
+//saving user data when page is refreshed or window is closed
+window.onbeforeunload = function(){
+  localStorage.setItem("data_array",tags);
+  tags = [];
+
+  localStorage.setItem("hist_array", historyArray);
+  historyArray = [];
+}
+
+
+//history tab coding
+var arr = [];
+arr = localStorage.getItem("hist_array").split(",");
+
+function showHistory(){
+  for(var item of arr){
+
+      var li = document.createElement("li");
+      var t = document.createTextNode(item);
+
+      li.appendChild(t);
+      addDecoration(li);
+
+      document.getElementById("historyUL").appendChild(li);
+    }
+
 }

@@ -110,9 +110,11 @@ main #inputButton{
 
 }
 
+
 #myUL li:nth-child(odd) {
   background: #f9f9f9;
 }
+
 #myUL li:hover {
   background: #ddd;
 }
