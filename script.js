@@ -5,10 +5,11 @@ function newElement(){
   var inputValue = document.getElementById("myInput").value;
 
   var li = document.createElement("li");
+  li.className = "checked"
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
   addDecoration(li);
-
+  //li.onclick = addCheckMark();
 
   if (inputValue === '') {
     alert("You must write something!");
@@ -56,42 +57,50 @@ function addDecoration(li){
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
+
   span.appendChild(txt);
   li.appendChild(span);
+  span.onclick = closeTheEntry();
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("edit");
   span.className = "edit";
+
   span.appendChild(txt);
   li.appendChild(span);
+  span.onclick = editEntry();
 }
 
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-for (var i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-  var div = this.parentElement;
-  div.style.display = "none";
+function closeTheEntry(){
+  // Click on a close button to hide the current list item
+  var close = document.getElementsByClassName("close");
+  for (var i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+    }
   }
 }
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.getElementById("myUL");
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+// function addCheckMark(){
+//   // Add a "checked" symbol when clicking on a list item
+//   var list = document.getElementById("myUL");
+//   list.addEventListener('click', function(ev) {
+//     if (ev.target.tagName === 'LI') {
+//       ev.target.classList.toggle('checked');
+//     }
+//   }, false);
+// }
 
-
-
-/*editing the field*/
-var items = document.getElementsByClassName("edit");
-for(var i=0;i<items.length;i++){
-  items[i].onclick = function(){
-    var string = this.parentElement.textContent;
-    string = string.substring(0, string.length-5);
-    document.getElementById("myInput").value = string;
-    this.parentElement.style.display = "none";
+function editEntry(){
+  /*editing the field*/
+  var items = document.getElementsByClassName("edit");
+  for(var i=0;i<items.length;i++){
+    items[i].onclick = function(){
+      var string = this.parentElement.textContent;
+      string = string.substring(0, string.length-5);
+      document.getElementById("myInput").value = string;
+      this.parentElement.style.display = "none";
+    }
   }
 }

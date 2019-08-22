@@ -130,6 +130,7 @@ main #inputButton{
   float: right;
   font-size: 20px;
   margin-top: -2px;
+  cursor: pointer;
 
 }
 
@@ -143,6 +144,7 @@ main #inputButton{
    height: 30px;
    float: right;
    margin-right: 10px;
+   cursor: po
 
  }
  .edit:hover {
@@ -150,7 +152,7 @@ main #inputButton{
    color: white;
  }
 /*when clicked a todo draw a line*/
-#todo-div ul li .checked {
+#todo-div ul li.checked {
   background: #888;
   color: #fff;
   text-decoration: line-through;
