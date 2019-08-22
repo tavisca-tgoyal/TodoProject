@@ -123,7 +123,6 @@ function closeTheEntry(){
   list.addEventListener('click', function(ev) {
     if (ev.target.tagName === 'LI') {
       ev.target.classList.toggle('checked');
-
     }
   }, false);
 
@@ -135,6 +134,11 @@ function editEntry(){
     items[i].onclick = function(){
       var string = this.parentElement.textContent;
       string = string.substring(0, string.length-5);
+      //removing the item from the List
+      var index = tags.indexOf(string);
+      if(index>-1){
+        tags.splice(index,1);
+      }
       document.getElementById("myInput").value = string;
       this.parentElement.style.display = "none";
     }
