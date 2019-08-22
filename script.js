@@ -5,11 +5,11 @@ function newElement(){
   var inputValue = document.getElementById("myInput").value;
 
   var li = document.createElement("li");
-  li.className = "checked"
+
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
   addDecoration(li);
-  //li.onclick = addCheckMark();
+
 
   if (inputValue === '') {
     alert("You must write something!");
@@ -82,15 +82,15 @@ function closeTheEntry(){
   }
 }
 
-// function addCheckMark(){
-//   // Add a "checked" symbol when clicking on a list item
-//   var list = document.getElementById("myUL");
-//   list.addEventListener('click', function(ev) {
-//     if (ev.target.tagName === 'LI') {
-//       ev.target.classList.toggle('checked');
-//     }
-//   }, false);
-// }
+
+  // Add a "checked" symbol when clicking on a list item
+  var list = document.getElementById("myUL");
+  list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
+
 
 function editEntry(){
   /*editing the field*/
