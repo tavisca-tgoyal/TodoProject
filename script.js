@@ -84,7 +84,7 @@ function addDecoration(li){
 
   span.appendChild(txt);
   li.appendChild(span);
-  span.onclick = closeTheEntry();
+  span.onclick = closeTheEntry;
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("edit");
@@ -92,7 +92,7 @@ function addDecoration(li){
 
   span.appendChild(txt);
   li.appendChild(span);
-  span.onclick = editEntry();
+  span.onclick = editEntry;
 }
 
 function closeTheEntry(){
@@ -117,16 +117,6 @@ function closeTheEntry(){
   }
 }
 
-
-  // Add a "checked" symbol when clicking on a list item
-  var list = document.getElementById("myUL");
-  list.addEventListener('click', function(ev) {
-    if (ev.target.tagName === 'LI') {
-      ev.target.classList.toggle('checked');
-    }
-  }, false);
-
-
 function editEntry(){
   /*editing the field*/
   var items = document.getElementsByClassName("edit");
@@ -146,6 +136,14 @@ function editEntry(){
     }
   }
 }
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.getElementById("myUL");
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
 
 //saving user data when page is refreshed or window is closed
 window.onbeforeunload = function(){
